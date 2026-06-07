@@ -121,7 +121,7 @@ def open_ticket(t: Ticket):
         "OJP Request/Response XML:\n"
         f"- [request.xml]({request_gist_url})\n"
         f"- [response.xml]({response_gist_url})\n\n"
-        "Issue generated with github-issues script"
+        "Issue generated with ojp-issue-intake"
     )
 
     issue = create_issue(t.title, body)
