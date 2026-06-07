@@ -129,6 +129,9 @@ def open_ticket(t: Ticket):
     
     node_id = issue["node_id"]
     project_id = MAP_PROJECT_IDS[t.projectKey]
+    if project_id is None:
+        raise HTTPException(400, f'Unknown projectKey: {t.projectKey}')
+
     assign_ticket_project(node_id, project_id)
 
     return { "issue_url": issue_url, "gists": [request_gist_url, response_gist_url] }
